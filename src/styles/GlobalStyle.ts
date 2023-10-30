@@ -15,6 +15,10 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${({ theme }) => theme.colors.main};
   }
 
+  h1, h2 {
+    margin-top: 0;
+  }
+
   ul, li {
     list-style: none;
     margin: 0;
@@ -32,6 +36,15 @@ const GlobalStyle = createGlobalStyle`
     color: inherit;
     background: none;
     border: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  input {
+    font: inherit
   }
 
   img {

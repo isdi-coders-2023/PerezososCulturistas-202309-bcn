@@ -7,7 +7,7 @@ const mainTheme: DefaultTheme = {
     light: "#F8F710",
   },
   typography: {
-    mainFont: "Nunito",
+    mainFont: "'Nunito', sans-serif",
     secondaryFont: "Bangers",
   },
 };
