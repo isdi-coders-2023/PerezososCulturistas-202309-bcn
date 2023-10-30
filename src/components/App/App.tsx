@@ -1,7 +1,5 @@
-import AppStyled from "./AppStyled";
-
 const App = (): React.ReactElement => {
-  return <AppStyled></AppStyled>;
+  return <main className="main-content"></main>;
 };
 
 export default App;
