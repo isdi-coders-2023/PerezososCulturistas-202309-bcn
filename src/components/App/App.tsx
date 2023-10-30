@@ -1,5 +1,13 @@
+import Header from "../Header/Header";
+import AppStyled from "./AppStyled";
+
 const App = (): React.ReactElement => {
-  return <main className="main-content"></main>;
+  return (
+    <AppStyled>
+      <Header />
+      <main className="main-content"></main>
+    </AppStyled>
+  );
 };
 
 export default App;
