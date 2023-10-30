@@ -13,9 +13,12 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@fontsource/bangers": "^5.0.17",
+    "@fontsource/nunito": "^5.0.15",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.17.0"
+    "react-router-dom": "^6.17.0",
+    "styled-components": "^6.1.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.2.0",
