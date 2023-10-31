@@ -5,7 +5,7 @@ const NavigationStyled = styled.nav`
     display: flex;
     justify-content: center;
     gap: 30px;
-    font-family: ${({ theme }) => theme.typography.secondaryFont};
+    font-family: "Bangers";
     font-size: 25px;
   }
 `;
