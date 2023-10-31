@@ -3,9 +3,9 @@ import NavigationStyled from "./NavigationStyled";
 const Navigation = (): React.ReactElement => {
   return (
     <NavigationStyled>
-      <ul>
-        <li>HOME</li>
-        <li>CREATE</li>
+      <ul className="navigation">
+        <li className="navigation__option">home</li>
+        <li className="navigation__option">create</li>
       </ul>
     </NavigationStyled>
   );
