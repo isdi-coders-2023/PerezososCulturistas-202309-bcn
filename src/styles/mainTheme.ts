@@ -8,7 +8,7 @@ const mainTheme: DefaultTheme = {
   },
   typography: {
     mainFont: "'Nunito', sans-serif",
-    secondaryFont: "Bangers",
+    secondaryFont: "Bangers, sans-serif",
   },
 };
 
