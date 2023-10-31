@@ -1,7 +1,7 @@
+import { Routes, Route } from "react-router-dom";
 import HomePage from "../../pages/HomePage/HomePage";
 import Header from "../Header/Header";
 import AppStyled from "./AppStyled";
-import { Routes, Route } from "react-router-dom";
 
 const App = (): React.ReactElement => {
   return (

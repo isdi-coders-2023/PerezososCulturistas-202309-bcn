@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
-import HomePage from "./HomePage";
 import "@testing-library/jest-dom";
+import HomePage from "./HomePage";
 
 describe("Given a Home page", () => {
   describe("When it is called", () => {
