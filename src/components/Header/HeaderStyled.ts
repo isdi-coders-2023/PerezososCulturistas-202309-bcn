@@ -1,9 +1,11 @@
 import styled from "styled-components";
 
 const HeaderStyled = styled.header`
-  display: block;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   height: 200px;
+  align-items: center;
 
   .header-logo {
     object-fit: cover;
