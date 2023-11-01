@@ -3,9 +3,9 @@ import "@testing-library/jest-dom";
 import HomePage from "./HomePage";
 
 describe("Given a Home page", () => {
-  describe("When it is called", () => {
-    test("Then it should show a heading with the text 'CHARACTERS LIST'", () => {
-      const headingText = "CHARACTERS LIST";
+  describe("When it renders", () => {
+    test("Then it should show a heading with the text 'Characters list'", () => {
+      const headingText = "Characters list";
 
       render(<HomePage />);
 
