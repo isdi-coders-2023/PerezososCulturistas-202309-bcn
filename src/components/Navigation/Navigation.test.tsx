@@ -1,6 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import Navigation from "./Navigation";
 import { BrowserRouter } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+import mainTheme from "../../styles/mainTheme";
 
 describe("Given a Navigation component", () => {
   describe("When it is rendered", () => {
@@ -9,7 +11,9 @@ describe("Given a Navigation component", () => {
 
       render(
         <BrowserRouter>
-          <Navigation />
+          <ThemeProvider theme={mainTheme}>
+            <Navigation />
+          </ThemeProvider>
         </BrowserRouter>,
       );
 
@@ -28,7 +32,9 @@ describe("When it is rendered", () => {
 
     render(
       <BrowserRouter>
-        <Navigation />
+        <ThemeProvider theme={mainTheme}>
+          <Navigation />
+        </ThemeProvider>
       </BrowserRouter>,
     );
 
