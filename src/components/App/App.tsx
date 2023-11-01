@@ -5,15 +5,13 @@ import AppStyled from "./AppStyled";
 
 const App = (): React.ReactElement => {
   return (
-    <>
-      <AppStyled>
-        <Header />
-        <main className="main-content"></main>
-        <Routes>
-          <Route path="/home" element={<HomePage />} />
-        </Routes>
-      </AppStyled>
-    </>
+    <AppStyled>
+      <Header />
+      <main className="main-content"></main>
+      <Routes>
+        <Route path="/home" element={<HomePage />} />
+      </Routes>
+    </AppStyled>
   );
 };
 
