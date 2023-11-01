@@ -7,10 +7,11 @@ const App = (): React.ReactElement => {
   return (
     <AppStyled>
       <Header />
-      <main className="main-content"></main>
-      <Routes>
-        <Route path="/home" element={<HomePage />} />
-      </Routes>
+      <main className="main-content">
+        <Routes>
+          <Route path="/home" element={<HomePage />} />
+        </Routes>
+      </main>
     </AppStyled>
   );
 };
