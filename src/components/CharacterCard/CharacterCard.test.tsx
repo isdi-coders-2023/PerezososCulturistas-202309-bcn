@@ -4,6 +4,7 @@ import { ThemeProvider } from "styled-components";
 import { characterMock } from "../../mocks/characters";
 import CharacterCard from "./CharacterCard";
 import mainTheme from "../../styles/mainTheme";
+import CharactersProviderWrapper from "../../features/characters/store/CharactersProviderWrapper";
 
 describe("Given a CharacterCard component ", () => {
   describe("When it receives a picture url", () => {
@@ -11,9 +12,11 @@ describe("Given a CharacterCard component ", () => {
       const expectedAltText = characterMock.name;
 
       render(
-        <ThemeProvider theme={mainTheme}>
-          <CharacterCard character={characterMock} />
-        </ThemeProvider>,
+        <CharactersProviderWrapper>
+          <ThemeProvider theme={mainTheme}>
+            <CharacterCard character={characterMock} />
+          </ThemeProvider>
+        </CharactersProviderWrapper>,
       );
       const pictureImage = screen.getByAltText(expectedAltText);
 
@@ -26,9 +29,11 @@ describe("Given a CharacterCard component ", () => {
       const goku = characterMock;
 
       render(
-        <ThemeProvider theme={mainTheme}>
-          <CharacterCard character={goku} />
-        </ThemeProvider>,
+        <CharactersProviderWrapper>
+          <ThemeProvider theme={mainTheme}>
+            <CharacterCard character={goku} />
+          </ThemeProvider>
+        </CharactersProviderWrapper>,
       );
       const characterName = screen.getByRole("heading", {
         name: goku.name,
