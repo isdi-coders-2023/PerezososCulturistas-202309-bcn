@@ -2,6 +2,8 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import Header from "./Header";
 import { BrowserRouter } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+import mainTheme from "../../styles/mainTheme";
 
 describe("Given a Header component", () => {
   describe("When it renders", () => {
@@ -10,7 +12,9 @@ describe("Given a Header component", () => {
 
       render(
         <BrowserRouter>
-          <Header />;
+          <ThemeProvider theme={mainTheme}>
+            <Header />;
+          </ThemeProvider>
         </BrowserRouter>,
       );
       const headerImage = screen.getByAltText(expectedAltText);
