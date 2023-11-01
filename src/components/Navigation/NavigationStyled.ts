@@ -8,6 +8,10 @@ const NavigationStyled = styled.nav`
     font-family: ${({ theme }) => theme.typography.secondaryFont};
     font-size: 25px;
   }
+
+  .active {
+    text-decoration: underline;
+  }
 `;
 
 export default NavigationStyled;
