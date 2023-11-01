@@ -1,5 +1,9 @@
 const HomePage = (): React.ReactElement => {
-  return <h2>CHARACTERS LIST</h2>;
+  return (
+    <section>
+      <h2>Characters list</h2>
+    </section>
+  );
 };
 
 export default HomePage;
