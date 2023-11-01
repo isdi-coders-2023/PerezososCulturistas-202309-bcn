@@ -3,6 +3,7 @@ import { ThemeProvider } from "styled-components";
 import mainTheme from "../../styles/mainTheme";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
+import CharactersProviderWrapper from "../../features/characters/store/CharactersProviderWrapper";
 
 describe("Given the App component", () => {
   describe("When it renders a header", () => {
@@ -10,11 +11,13 @@ describe("Given the App component", () => {
       const expectedAltText = "DragonBall logo";
 
       render(
-        <ThemeProvider theme={mainTheme}>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
-        </ThemeProvider>,
+        <CharactersProviderWrapper>
+          <ThemeProvider theme={mainTheme}>
+            <BrowserRouter>
+              <App />
+            </BrowserRouter>
+          </ThemeProvider>
+        </CharactersProviderWrapper>,
       );
 
       const headerLogo = screen.getByAltText(expectedAltText);

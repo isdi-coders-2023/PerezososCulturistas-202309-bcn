@@ -3,6 +3,7 @@ import Navigation from "./Navigation";
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import mainTheme from "../../styles/mainTheme";
+import CharactersProviderWrapper from "../../features/characters/store/CharactersProviderWrapper";
 
 describe("Given a Navigation component", () => {
   describe("When it is rendered", () => {
@@ -11,9 +12,11 @@ describe("Given a Navigation component", () => {
 
       render(
         <BrowserRouter>
-          <ThemeProvider theme={mainTheme}>
-            <Navigation />
-          </ThemeProvider>
+          <CharactersProviderWrapper>
+            <ThemeProvider theme={mainTheme}>
+              <Navigation />
+            </ThemeProvider>
+          </CharactersProviderWrapper>
         </BrowserRouter>,
       );
 
@@ -32,9 +35,11 @@ describe("When it is rendered", () => {
 
     render(
       <BrowserRouter>
-        <ThemeProvider theme={mainTheme}>
-          <Navigation />
-        </ThemeProvider>
+        <CharactersProviderWrapper>
+          <ThemeProvider theme={mainTheme}>
+            <Navigation />
+          </ThemeProvider>
+        </CharactersProviderWrapper>
       </BrowserRouter>,
     );
 
