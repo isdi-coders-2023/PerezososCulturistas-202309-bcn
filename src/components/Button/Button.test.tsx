@@ -1,0 +1,56 @@
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import Button from "./Button";
+import CharactersProviderWrapper from "../../features/characters/store/CharactersProviderWrapper";
+import { ThemeProvider } from "styled-components";
+import mainTheme from "../../styles/mainTheme";
+
+beforeEach(() => {
+  vi.resetAllMocks();
+});
+
+describe("Given a Button component", () => {
+  const children = "Modify";
+  const actionOnClick = vi.fn();
+
+  describe("When it receives the text 'Delete'", () => {
+    test("Then it should show 'Delete' inside", () => {
+      render(
+        <CharactersProviderWrapper>
+          <ThemeProvider theme={mainTheme}>
+            <Button
+              actionOnClick={actionOnClick}
+              children={children}
+              disabled
+              text=""
+            />
+          </ThemeProvider>
+        </CharactersProviderWrapper>,
+      );
+      const button = screen.getByRole("button", { name: children });
+
+      expect(button).toBeInTheDocument();
+    });
+  });
+  describe("When it receives an action and the user clicks the button", () => {
+    test("Then it should call the received action", async () => {
+      render(
+        <CharactersProviderWrapper>
+          <ThemeProvider theme={mainTheme}>
+            <Button
+              actionOnClick={actionOnClick}
+              children={children}
+              disabled
+              text=""
+            />
+          </ThemeProvider>
+        </CharactersProviderWrapper>,
+      );
+
+      const button = screen.getByRole("button", { name: children });
+
+      await userEvent.click(button);
+      expect(actionOnClick).toHaveBeenCalled();
+    });
+  });
+});
