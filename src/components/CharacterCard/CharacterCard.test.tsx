@@ -1,10 +1,10 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { ThemeProvider } from "styled-components";
-import { characterMock } from "../../mocks/characters";
 import CharacterCard from "./CharacterCard";
 import mainTheme from "../../styles/mainTheme";
 import CharactersProviderWrapper from "../../features/characters/store/CharactersProviderWrapper";
+import { characterMock } from "../../data/characters";
 
 describe("Given a CharacterCard component ", () => {
   describe("When it receives a picture url", () => {
