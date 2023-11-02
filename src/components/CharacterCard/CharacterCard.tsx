@@ -14,13 +14,13 @@ const CharacterCard = ({
           className="character-card__image"
           src={picture}
           alt={name}
-          width=""
-          height=""
+          width="216"
+          height="363"
         />
         <h2 className="character-card__name">{name}</h2>
-        <dl className="character-card__details">
-          <dd>{race}</dd>
-        </dl>
+        <ul className="character-card__details">
+          <li>{race}</li>
+        </ul>
       </div>
     </CharacterCardStyled>
   );
