@@ -14,7 +14,7 @@ describe("Given a Button component", () => {
   const actionOnClick = vi.fn();
 
   describe("When it receives the text 'Delete'", () => {
-    test("Then it should show 'Delete' inside", () => {
+    test("Then it should show a 'Delete' text", () => {
       render(
         <CharactersProviderWrapper>
           <ThemeProvider theme={mainTheme}>
