@@ -10,7 +10,7 @@ beforeEach(() => {
 });
 
 describe("Given a Button component", () => {
-  const children = "Modify";
+  const text = "Modify";
   const actionOnClick = vi.fn();
 
   describe("When it receives the text 'Delete'", () => {
@@ -18,16 +18,11 @@ describe("Given a Button component", () => {
       render(
         <CharactersProviderWrapper>
           <ThemeProvider theme={mainTheme}>
-            <Button
-              actionOnClick={actionOnClick}
-              children={children}
-              disabled
-              text=""
-            />
+            <Button actionOnClick={actionOnClick} text={text} />
           </ThemeProvider>
         </CharactersProviderWrapper>,
       );
-      const button = screen.getByRole("button", { name: children });
+      const button = screen.getByRole("button", { name: text });
 
       expect(button).toBeInTheDocument();
     });
@@ -37,17 +32,12 @@ describe("Given a Button component", () => {
       render(
         <CharactersProviderWrapper>
           <ThemeProvider theme={mainTheme}>
-            <Button
-              actionOnClick={actionOnClick}
-              children={children}
-              disabled
-              text=""
-            />
+            <Button actionOnClick={actionOnClick} text={text} />
           </ThemeProvider>
         </CharactersProviderWrapper>,
       );
 
-      const button = screen.getByRole("button", { name: children });
+      const button = screen.getByRole("button", { name: text });
 
       await userEvent.click(button);
       expect(actionOnClick).toHaveBeenCalled();
