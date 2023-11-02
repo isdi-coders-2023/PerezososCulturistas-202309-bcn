@@ -9,7 +9,6 @@ const AppStyled = styled.div`
   .main-content {
     display: flex;
     justify-content: center;
-    text-transform: uppercase;
   }
 `;
 
