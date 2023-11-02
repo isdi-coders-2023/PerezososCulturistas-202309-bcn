@@ -3,8 +3,8 @@ import ButtonStyled from "./ButtonStyled";
 
 interface ButtonProps extends PropsWithChildren {
   actionOnClick: () => void;
-  text: string;
-  disabled: boolean;
+  text?: string;
+  disabled?: boolean;
 }
 
 const Button = ({
