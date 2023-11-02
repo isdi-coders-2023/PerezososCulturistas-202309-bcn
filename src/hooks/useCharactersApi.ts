@@ -10,7 +10,7 @@ const useCharactersApi = () => {
     return characters;
   };
 
-  return getCharacters;
+  return { getCharacters };
 };
 
 export default useCharactersApi;
