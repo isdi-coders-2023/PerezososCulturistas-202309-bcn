@@ -33,11 +33,13 @@ describe("Given the App component", () => {
       const expectedHeadingText = "Characters list";
 
       render(
-        <ThemeProvider theme={mainTheme}>
-          <MemoryRouter initialEntries={[{ pathname: "/" }]}>
-            <App />
-          </MemoryRouter>
-        </ThemeProvider>,
+        <CharactersProviderWrapper>
+          <ThemeProvider theme={mainTheme}>
+            <MemoryRouter initialEntries={[{ pathname: "/" }]}>
+              <App />
+            </MemoryRouter>
+          </ThemeProvider>
+        </CharactersProviderWrapper>,
       );
 
       const homePageElement = screen.getByRole("heading", {
