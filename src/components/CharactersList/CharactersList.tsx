@@ -1,20 +1,26 @@
 import { useContext, useEffect } from "react";
 import CharactersContext from "../../features/characters/store/CharactersContext";
 import CharactersListStyled from "./CharactersListStyled";
-import { charactersMock } from "../../mocks/charactersMock";
+import useCharactersApi from "../../hooks/useCharactersApi";
+import CharacterCard from "../CharacterCard/CharacterCard";
 
 const CharactersList = (): React.ReactElement => {
   const { characters, loadCharacters } = useContext(CharactersContext);
+  const { getCharacters } = useCharactersApi();
 
   useEffect(() => {
-    loadCharacters(charactersMock);
-  }, [loadCharacters]);
+    (async () => {
+      const characters = await getCharacters();
+
+      loadCharacters(characters);
+    })();
+  }, [loadCharacters, getCharacters]);
 
   return (
-    <CharactersListStyled>
+    <CharactersListStyled title="characters-list">
       {characters.map((character) => (
         <li key={character.id}>
-          <h2>{character.name}</h2>
+          <CharacterCard character={character} />
         </li>
       ))}
     </CharactersListStyled>
