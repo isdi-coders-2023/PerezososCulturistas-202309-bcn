@@ -7,7 +7,7 @@ import CharactersProviderWrapper from "../../features/characters/store/Character
 
 describe("Given a Navigation component", () => {
   describe("When it is rendered", () => {
-    test("Then it should show 'home' links", () => {
+    test("Then it should show a 'home' link", () => {
       const expectedTextHome = "home";
 
       render(
@@ -27,26 +27,26 @@ describe("Given a Navigation component", () => {
       expect(navigationLinkHome).toBeInTheDocument();
     });
   });
-});
 
-describe("When it is rendered", () => {
-  test("Then it should show 'create' links", () => {
-    const expectedTextCreate = "create";
+  describe("When it is rendered", () => {
+    test("Then it should show a 'create' link", () => {
+      const expectedTextCreate = "create";
 
-    render(
-      <BrowserRouter>
-        <CharactersProviderWrapper>
-          <ThemeProvider theme={mainTheme}>
-            <Navigation />
-          </ThemeProvider>
-        </CharactersProviderWrapper>
-      </BrowserRouter>,
-    );
+      render(
+        <BrowserRouter>
+          <CharactersProviderWrapper>
+            <ThemeProvider theme={mainTheme}>
+              <Navigation />
+            </ThemeProvider>
+          </CharactersProviderWrapper>
+        </BrowserRouter>,
+      );
 
-    const navigationLinkCreate = screen.getByRole("link", {
-      name: expectedTextCreate,
+      const navigationLinkCreate = screen.getByRole("link", {
+        name: expectedTextCreate,
+      });
+
+      expect(navigationLinkCreate).toBeInTheDocument();
     });
-
-    expect(navigationLinkCreate).toBeInTheDocument();
   });
 });
