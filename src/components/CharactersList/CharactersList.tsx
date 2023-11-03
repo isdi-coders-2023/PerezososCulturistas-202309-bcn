@@ -17,7 +17,7 @@ const CharactersList = (): React.ReactElement => {
   }, [loadCharacters, getCharacters]);
 
   return (
-    <CharactersListStyled>
+    <CharactersListStyled title="characters-list">
       {characters.map((character) => (
         <li key={character.id}>
           <CharacterCard character={character} />
