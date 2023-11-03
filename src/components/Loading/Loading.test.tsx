@@ -5,7 +5,7 @@ import mainTheme from "../../styles/mainTheme";
 import Loading from "./Loading";
 
 describe("Given a Loading component", () => {
-  describe("When it rnders", () => {
+  describe("When it renders", () => {
     test("Then it should show a Goku's gif", () => {
       const expectedAltText = "Goku playing with Dragon Balls";
 
@@ -18,6 +18,7 @@ describe("Given a Loading component", () => {
       );
 
       const gif = screen.getByAltText(expectedAltText);
+
       expect(gif).toBeInTheDocument();
     });
   });
