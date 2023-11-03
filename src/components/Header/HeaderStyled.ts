@@ -9,6 +9,7 @@ const HeaderStyled = styled.header`
 
   .header-logo {
     object-fit: cover;
+    margin-bottom: 20px;
   }
 `;
 

@@ -9,6 +9,7 @@ const AppStyled = styled.div`
   .main-content {
     display: flex;
     justify-content: center;
+    padding: 20px;
   }
 `;
 
