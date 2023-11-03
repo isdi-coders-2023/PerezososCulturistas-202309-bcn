@@ -9,7 +9,8 @@ const CharacterCardStyled = styled.article`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 25px #00000080;
+  padding: 20px;
 
   .character-card {
     padding: 10px;
@@ -34,6 +35,10 @@ const CharacterCardStyled = styled.article`
     &__image {
       object-fit: contain;
     }
+  }
+
+  @media (max-width: 320px) {
+    width: 220px;
   }
 `;
 

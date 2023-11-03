@@ -18,9 +18,7 @@ const CharacterCard = ({
           height="363"
         />
         <h2 className="character-card__name">{name}</h2>
-        <ul className="character-card__details">
-          <li>{race}</li>
-        </ul>
+        <span className="character-card__details">{race}</span>
       </div>
     </CharacterCardStyled>
   );
