@@ -1,6 +1,7 @@
 import { renderHook } from "@testing-library/react";
 import { CharacterStructure } from "../features/characters/types";
 import useCharactersApi from "./useCharactersApi";
+import UiContextWrapper from "../features/ui/store/UiContextWrapper";
 
 describe("Given a useCharactersApi custom hook", () => {
   describe("When it calls the url 'https://kame-kame-cloud-api.onrender.com/characters?_limit=10'", () => {
@@ -30,9 +31,12 @@ describe("Given a useCharactersApi custom hook", () => {
         },
       ];
 
-      const { result } = renderHook(() => {
-        return useCharactersApi();
-      });
+      const { result } = renderHook(
+        () => {
+          return useCharactersApi();
+        },
+        { wrapper: UiContextWrapper },
+      );
 
       const loadCharacters = async () => {
         const characters = await result.current.getCharacters();
