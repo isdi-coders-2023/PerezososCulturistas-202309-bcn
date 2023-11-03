@@ -24,10 +24,15 @@ const CharacterCardStyled = styled.article`
     &__name {
       font-size: 32px;
       font-weight: 800;
+      margin-top: 20px;
     }
 
     &__details {
       font-size: 16px;
+    }
+
+    &__image {
+      object-fit: contain;
     }
   }
 `;
