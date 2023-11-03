@@ -1,3 +1,4 @@
+import { renderHook } from "@testing-library/react";
 import { CharacterStructure } from "../features/characters/types";
 import useCharactersApi from "./useCharactersApi";
 
@@ -29,11 +30,18 @@ describe("Given a useCharactersApi custom hook", () => {
         },
       ];
 
-      const { getCharacters } = useCharactersApi();
+      const { result } = renderHook(() => {
+        return useCharactersApi();
+      });
 
-      const currentCharacters = await getCharacters();
+      const loadCharacters = async () => {
+        const characters = await result.current.getCharacters();
+        return characters;
+      };
 
-      expect(currentCharacters).toStrictEqual(expectedCharacters);
+      const characters = await loadCharacters();
+
+      expect(characters).toStrictEqual(expectedCharacters);
     });
   });
 });

@@ -1,3 +1,4 @@
+import CharactersList from "../../components/CharactersList/CharactersList";
 import HomePageStyled from "./HomePageStyled";
 
 const HomePage = (): React.ReactElement => {
@@ -5,6 +6,7 @@ const HomePage = (): React.ReactElement => {
     <HomePageStyled>
       <section>
         <h2 className="page-title">Characters list</h2>
+        <CharactersList />
       </section>
     </HomePageStyled>
   );
