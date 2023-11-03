@@ -6,7 +6,7 @@ import Loading from "./Loading";
 
 describe("Given a Loading component", () => {
   describe("When it renders", () => {
-    test("Then it should show a Goku's gif", () => {
+    test("Then it should show a Goku's image", () => {
       const expectedAltText = "Goku playing with Dragon Balls";
 
       render(
