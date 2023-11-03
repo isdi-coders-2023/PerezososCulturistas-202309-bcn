@@ -1,4 +1,4 @@
-import { PropsWithChildren, useState } from "react";
+import { PropsWithChildren, useMemo, useState } from "react";
 import UiContext from "./UiContext";
 
 const UiContextWrapper = ({
@@ -6,11 +6,12 @@ const UiContextWrapper = ({
 }: PropsWithChildren): React.ReactElement => {
   const [isLoading, setIsLoading] = useState(false);
 
-  return (
-    <UiContext.Provider value={{ isLoading, setIsLoading }}>
-      {children}
-    </UiContext.Provider>
+  const uiProvider = useMemo(
+    () => ({ isLoading, setIsLoading }),
+    [isLoading, setIsLoading],
   );
+
+  return <UiContext.Provider value={uiProvider}>{children}</UiContext.Provider>;
 };
 
 export default UiContextWrapper;
