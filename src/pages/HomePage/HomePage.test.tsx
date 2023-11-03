@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import HomePage from "./HomePage";
 import CharactersProviderWrapper from "../../features/characters/store/CharactersProviderWrapper";
+import UiContextWrapper from "../../features/ui/store/UiContextWrapper";
 
 describe("Given a Home page", () => {
   describe("When it renders", () => {
@@ -9,9 +10,11 @@ describe("Given a Home page", () => {
       const headingText = "Characters list";
 
       render(
-        <CharactersProviderWrapper>
-          <HomePage />
-        </CharactersProviderWrapper>,
+        <UiContextWrapper>
+          <CharactersProviderWrapper>
+            <HomePage />
+          </CharactersProviderWrapper>
+        </UiContextWrapper>,
       );
 
       const heading = screen.getByRole("heading", {

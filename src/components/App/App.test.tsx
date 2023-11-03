@@ -4,6 +4,7 @@ import mainTheme from "../../styles/mainTheme";
 import { BrowserRouter, MemoryRouter } from "react-router-dom";
 import App from "./App";
 import CharactersProviderWrapper from "../../features/characters/store/CharactersProviderWrapper";
+import UiContextWrapper from "../../features/ui/store/UiContextWrapper";
 
 describe("Given the App component", () => {
   describe("When it renders a header", () => {
@@ -11,13 +12,15 @@ describe("Given the App component", () => {
       const expectedAltText = "DragonBall logo";
 
       render(
-        <CharactersProviderWrapper>
-          <ThemeProvider theme={mainTheme}>
-            <BrowserRouter>
-              <App />
-            </BrowserRouter>
-          </ThemeProvider>
-        </CharactersProviderWrapper>,
+        <UiContextWrapper>
+          <CharactersProviderWrapper>
+            <ThemeProvider theme={mainTheme}>
+              <BrowserRouter>
+                <App />
+              </BrowserRouter>
+            </ThemeProvider>
+          </CharactersProviderWrapper>
+        </UiContextWrapper>,
       );
 
       const headerLogo = screen.getByAltText(expectedAltText);
@@ -33,13 +36,15 @@ describe("Given the App component", () => {
       const expectedHeadingText = "Characters list";
 
       render(
-        <CharactersProviderWrapper>
-          <ThemeProvider theme={mainTheme}>
-            <MemoryRouter initialEntries={[{ pathname: "/" }]}>
-              <App />
-            </MemoryRouter>
-          </ThemeProvider>
-        </CharactersProviderWrapper>,
+        <UiContextWrapper>
+          <CharactersProviderWrapper>
+            <ThemeProvider theme={mainTheme}>
+              <MemoryRouter initialEntries={[{ pathname: "/" }]}>
+                <App />
+              </MemoryRouter>
+            </ThemeProvider>
+          </CharactersProviderWrapper>
+        </UiContextWrapper>,
       );
 
       const homePageElement = screen.getByRole("heading", {
